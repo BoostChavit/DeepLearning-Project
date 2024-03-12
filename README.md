@@ -22,7 +22,25 @@ original alphabet written dataset : https://www.kaggle.com/datasets/dhruvildave/
 
 # creating model
 
+![alt text](<model_summary.png>)
+
+สร้างโมเดลจาก CNN เเละ MLP โดย implement layers ของ CNN ตาม VGG Architectures เเต่ได้ทำการลดขนาดลงเพื่อลดระยะเวลาในการประมวลจากนั้นส่ง output ที่ได้ไปที่ fully connect NN 2 layers มีจำนวน NN layers 1024 node เเละมีจำนวน node ใน output layers ทั้งหมด 37 node ตามจำนวน class ที่ต้องการทำนาย
 
 
 # training model
 
+ทำการเเบ่งข้อมูลออกเป็น 2 ชุดโดยมีสัดส่วนคือ train 80% เเละ test 20% จากนั้นนำข้อมูลที่ได้ไปทำการทำ augmentation เพื่อเพิ่มประสิทธิภาพให้โมเดลก่อนที่จะส่งไปเทรนโมเดล
+
+
+# ขั้นตอนการติดตั้งเเละทดสอบโมเดล
+1. clone project จาก https://github.com/BoostChavit/DeepLearning-Project.git
+2. ติดตั้ง library กรณีที่เครื่องผู้ใช้ยังไม่มี
+    * cv2
+    * pandas
+    * numpy
+    * keras, tensorflow
+    * matplotlib
+    * sklearn
+3. ทดสอบลอง run program ที่ main.ipynb
+4. หลังจากที่ทดสอบ run model ไปเเล้ว 1 ครั้งในกรณีที่ไม่มีอะไรผิดพลาดเเละไม่มี error จะได้ไฟล์ SSFF_model.h5 หากผู้ใช้ต้องการทดสอบโมเดลหรือนำโมเดลไปใช้สามารถใช้ผ่านโมเดล SSFF_model.h5 นี้ได้เลยโดยไม่ต้องเทรนใหม่อีกครั้งโดยมีนำโค๊ดด้านล่างไปใส่ไว้บรรทัดล่างสุดหลังจากการเทรนเเล้วสามารถใช้งานได้เลย
+![alt text](<load_model.png>)
